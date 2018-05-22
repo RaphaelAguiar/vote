@@ -1,0 +1,14 @@
+  <div>
+    <p>CPF: </p>
+    <input #inputCpf
+      type="text"
+    />
+    <p>Senha: </p>
+    <input #inputPassword
+      type="password"
+    />
+    <input 
+      type="submit"
+      value="Entrar"
+      (click)="onEnterClick(inputCpf.value,inputPassword.value)"/>
+  </div>
