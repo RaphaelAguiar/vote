@@ -16,8 +16,10 @@ export class LoginComponent implements OnInit {
   }
 
   onEnterClick(cpf: string,password: string) {
-    this.authenticationService.login(cpf,password);
-    this.router.navigate([""])
+    this.authenticationService.login(cpf,password,'');
   } 
 
+  onLogonClick(){
+    this.router.navigate(['logon']);
+  }
 }

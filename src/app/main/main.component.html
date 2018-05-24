@@ -1,14 +1,26 @@
 <div>
-  <div *ngFor="let candidato of resultadoPresidente">
-    {{candidato}}
+  <div>
+    <input
+      type="button"
+      value="Logout"
+      (click)="onLogoutClick()"
+    />
   </div>
-
-  <input 
-    type="button"
-    value="Logon"
-    (click)="onLogonClick()"/>
-  <input 
-    type="button"
-    value="Login"
-    (click)="onLoginClick()"/>
+  <div>
+    <div *ngFor="let candidato of resultadoPresidente.contagem">
+      {{candidato.cpfCandidato}}: {{candidato.votos}}
+      <input 
+      type="button"
+      value="Votar"
+      (click)="onVotarClick('presidente',candidato.cpfCandidato)"
+      />
+    </div>
+    <div>
+      <input 
+        type="button"
+        value="Candidatar-me"
+        (click)="onCanditarClick('presidente')"
+      />
+    </div>
+  </div>
 </div>
