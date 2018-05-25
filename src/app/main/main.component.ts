@@ -11,7 +11,9 @@ import { Server } from '../services/server.service';
 })
 export class MainComponent implements OnInit {
 
-  resultadoPresidente = []
+  usuario: any = {}
+  resultadoPresidente: any = {}
+  candidatos: any = []
   
   constructor(private router: Router,
               private server: Server,
@@ -28,7 +30,12 @@ export class MainComponent implements OnInit {
     }else{
       this.server.authGet<any>(`api/eleicao/presidente`).subscribe(resultado => {
         this.resultadoPresidente = resultado
-      },error => alert(error.error.message));
+        this.server.authGetWithParams(`api/cidadao`,{cargo: 'presidente'})
+          .subscribe(candidatos => this.candidatos = candidatos)
+      },error => alert(error.error.message))
+
+      this.server.authGet(`api/cidadao/${this.authenticationService.getUserCpf()}`)
+        .subscribe(usuario => this.usuario = usuario)
     }
   }
 
@@ -57,5 +64,15 @@ export class MainComponent implements OnInit {
 
   isLogged() {
     return this.authenticationService.isLogged();
+  }
+
+  getNome(cpf: string): string {
+      try {
+        return this.candidatos
+          .filter(c => c.cpf === cpf)[0]
+          .nome
+      }catch(err){
+        return ''
+      }
   }
 }

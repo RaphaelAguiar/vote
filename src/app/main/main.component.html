@@ -7,8 +7,11 @@
     />
   </div>
   <div>
+    <p>Bem vindo {{usuario.nome}}</p>
+  </div>
+  <div>
     <div *ngFor="let candidato of resultadoPresidente.contagem">
-      {{candidato.cpfCandidato}}: {{candidato.votos}}
+      {{getNome(candidato.cpfCandidato)}}: {{candidato.votos}}
       <input 
       type="button"
       value="Votar"

@@ -15,8 +15,8 @@ export class LogonComponent implements OnInit {
   ngOnInit() {
   }
 
-  onRegisterClick(cpf: string,password: string) {
-    this.authenticationService.register(cpf,password).subscribe(
+  onRegisterClick(cpf: string,nome: string,password: string) {
+    this.authenticationService.register(cpf,nome,password).subscribe(
       response => {
         alert('Usuário criado com sucesso!')
         this.authenticationService.login(cpf,password,'')
@@ -24,5 +24,9 @@ export class LogonComponent implements OnInit {
       error => alert(error.error.message)
     )
   } 
+
+  onLoginClick() {
+    this.router.navigate(['login'])
+  }
 
 }

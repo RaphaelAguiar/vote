@@ -1,8 +1,19 @@
 <div>
+  <input
+    type="button"
+    value="Login"
+    (click)="onLoginClick()"
+  />
+</div>
+<div>
   <p>CPF: </p>
   <input #inputCpf
     type="text"
   />
+  <p>Nome: </p>
+  <input #inputNome
+    type="text"
+  />  
   <p>Senha: </p>
   <input #inputPassword
     type="password"
@@ -10,5 +21,5 @@
   <input 
     type="submit"
     value="Register"
-    (click)="onRegisterClick(inputCpf.value,inputPassword.value)"/>
+    (click)="onRegisterClick(inputCpf.value,inputNome.value,inputPassword.value)"/>
 </div>
