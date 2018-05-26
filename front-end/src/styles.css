@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+.content {
+    width: 90%;
+    margin: 25px auto;
+}
+
+.session {
+    border-top: 1px solid #ddd;
+    padding: 20px 30px 0px 30px;
+}
+
+.form {
+    width: 500px;
+    border: 1px solid #ddd;
+    margin: auto;
+    padding: 10px;
+    border-radius: .25rem;
+}
+
+.footer {
+    position: absolute;
+    width: 90%;
+    border-top: 1px solid #ddd;
+    padding: 20px 30px 0px 30px;
+    bottom: 0px;
+    text-align: right;
+}
+
+li {
+    padding: 0px 30px;
+}
+
+.link {
+    padding-left: 5px;
+    color: #0366d6
+}
+
+.link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
