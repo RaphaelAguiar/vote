@@ -2,23 +2,36 @@
 	Por que só podemos votar a cada 4 anos em uma era onde tudo é online?
 
 ## Como executar:
-	Com o npm instalado, execute o comando `npm start` e acesse: http://localhost:4200
+	Como gerar a versão de produção (back-end/front-end):
+		1. execute 'mvn clean install' na pasta do raiz do back-end
+		2. execute o comando 'java -jar ./target/{jar_gerado} --server.port=80' na pasta
 
-### TODO:
-	[ ] Implementar criptografia que apenas o vontante identifique o proprio voto
+### Proximas features:
 	[ ] Implementar funcionalidade de descandidatar
-	[ ] Criar arquivo de configuração de banco
-	[ ] Resolver FIXME do CORS
+	[ ] Implementar criptografia que apenas o vontante identifique o proprio voto
 	[ ] Implementar botão: "Nenhum destes candidatos"
-	[ ] Implementar suporte a governadores
+    [ ] Implementar suporte a governadores
+   	[ ] Criar arquivo de configuração de banco
+	[ ] Adicionar ferramenta de log
 
-	[ ] Implementar responsividade
+### TODO Portal:
+#### Tela institucional		
+	[ ] Criar pagina institucional
+
+#### Tela de Login
+	[ ] Adicionar rodapé	
+
+#### Tela de Logon
+	[ ] Adicionar rodapé	
+
+#### Tela principal
 	[ ] Adicionar % parcial da eleição
 	[ ] Limitar a quantidade de candidatos na tela
-	[ ] Ordenar por mais votado
 	[ ] Implementar atualização em tempo real da votação
+#### Todas
+	[ ] Configurar responsividade
+	[ ] Criar icone para o aplicativo
+	[ ] Criar componente de notificação
 
-	[ ] Adicionar passo a passo de como executar o back-end no readme
-
-	[X] Aplicar CSS
-	[X] Unificar fontes do backend com frontend
+### FIXME back-end
+	[ ] Resolver FIXME do CSRF

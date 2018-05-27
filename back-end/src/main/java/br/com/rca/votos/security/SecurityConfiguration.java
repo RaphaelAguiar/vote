@@ -26,7 +26,8 @@ private final UserDetailsService userDetailsService;
             .authorizeRequests()
             //.antMatchers("/home").permitAll()
             .antMatchers(HttpMethod.POST, "/api/cidadao").permitAll()
-            .anyRequest().authenticated()
+            .antMatchers( "/api/**").authenticated()
+            .anyRequest().permitAll()
             .and()
             // filtra requisições de login
             .addFilterBefore(new JWTLoginFilter("/api/login", authenticationManager()),
